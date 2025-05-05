@@ -3,7 +3,7 @@
 #include <QDockWidget>
 #include <QPainter>
 #include <QFont>
-#include <klinegrid.h>
+#include "klinegrid.h"
 
 ShowDetail::ShowDetail(QWidget* parent) : QDialog(parent)
 {
@@ -58,7 +58,7 @@ void ShowDetail::drawStr()
     pen.setColor(currentPriceColor);
     painter.setPen(pen);
     QRect rectTime4(20,110,100,30);
-    painter.drawText(rectTime4,str.sprintf("%.2f",currentPrice));
+    painter.drawText(rectTime4,QString::asprintf("%.2f",currentPrice));
 
 
 
@@ -72,7 +72,7 @@ void ShowDetail::drawStr()
     pen.setColor(openingPriceColor);
     painter.setPen(pen);
     QRect rectTime6(20,170,100,30);
-    painter.drawText(rectTime6,str.sprintf("%.2f",openingPrice));
+    painter.drawText(rectTime6,QString::asprintf("%.2f",openingPrice));
 
 
 
@@ -85,7 +85,7 @@ void ShowDetail::drawStr()
     pen.setColor(highestBidColor);
     painter.setPen(pen);
     QRect rectTime8(20,230,100,30);
-    painter.drawText(rectTime8,str.sprintf("%.2f",highestBid));
+    painter.drawText(rectTime8,QString::asprintf("%.2f",highestBid));
 
 
 
@@ -98,7 +98,7 @@ void ShowDetail::drawStr()
     pen.setColor(lowestBidColor);
     painter.setPen(pen);
     QRect rectTime10(20,290,100,30);
-    painter.drawText(rectTime10,str.sprintf("%.2f",lowestBid));
+    painter.drawText(rectTime10,QString::asprintf("%.2f",lowestBid));
 
 
 
@@ -112,7 +112,7 @@ void ShowDetail::drawStr()
     pen.setColor(closeingPriceColor);
     painter.setPen(pen);
     QRect rectTime12(20,350,100,30);
-    painter.drawText(rectTime12,str.sprintf("%.2f",closeingPrice));
+    painter.drawText(rectTime12,QString::asprintf("%.2f",closeingPrice));
 
 
     pen.setColor(QColor("#FFFFFF"));
@@ -125,7 +125,7 @@ void ShowDetail::drawStr()
     pen.setColor(amountOfIncreaseColor);
     painter.setPen(pen);
     QRect rectTime14(20,410,100,30);
-    painter.drawText(rectTime14,str.sprintf("%.2f%",amountOfIncrease));
+    painter.drawText(rectTime14,QString::asprintf("%.2f%",amountOfIncrease));
 
 
 
@@ -139,7 +139,7 @@ void ShowDetail::drawStr()
     pen.setColor(amountOfAmplitudeColor);
     painter.setPen(pen);
     QRect rectTime16(20,470,100,30);
-    painter.drawText(rectTime16,str.sprintf("%.2f%",amountOfAmplitude));
+    painter.drawText(rectTime16,QString::asprintf("%.2f%",amountOfAmplitude));
 
 
 
@@ -193,7 +193,7 @@ void ShowDetail::drawStr()
     pen.setColor(turnoverRateColor);
     painter.setPen(pen);
     QRect rectTime22(20,650,100,30);
-    painter.drawText(rectTime22,str.sprintf("%.2f",turnoverRate));
+    painter.drawText(rectTime22,QString::asprintf("%.2f",turnoverRate));
 
 
 

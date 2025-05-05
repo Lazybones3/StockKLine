@@ -37,7 +37,7 @@ void KLineGrid::initial()
 {
 
     //读取数据
-    QString file = tr("dataKLine.txt");
+    QString file = tr("../dataKLine.txt");
     if( !mDataFile.readData(file) )
     {
         QMessageBox::about(this,tr("数据文件读取失败"),tr("确定"));
@@ -169,11 +169,11 @@ void KLineGrid::drawYtick()
 
     if( 0 == getHGridNum() )
     {
-        str.sprintf("%.2f",lowestBid);
+        QString::asprintf("%.2f",lowestBid);
         painter.drawText( QPoint( getWidgetWidth() - getMarginLeft() + 10,
                                   getWidgetHeight() - getMarginBottom() ),
                           str);
-        str.sprintf("%.2f",highestBid);
+        QString::asprintf("%.2f",highestBid);
         painter.drawText( QPoint( getWidgetWidth() - getMarginLeft() + 10,
                                   getMarginTop() ),
                           str);
@@ -182,7 +182,7 @@ void KLineGrid::drawYtick()
 
     for( int i=0;i<=getHGridNum();++i)
     {
-        str.sprintf("%.2f",lowestBid+ i*ystep);
+        QString::asprintf("%.2f",lowestBid+ i*ystep);
         painter.drawText( QPoint( getWidgetWidth() - getMarginLeft() + 10,
                                   getWidgetHeight() - getMarginBottom() - i*getAtomGridHeight()),
                           str);
@@ -551,7 +551,7 @@ void KLineGrid::drawTips()
 
     QRect rectText( getWidgetWidth() - getMarginRight() + iTipsWidth/4,
                 yPos - iTipsHeight/4,iTipsWidth,iTipsHeight);
-    painter.drawText(rectText, str.sprintf("%.2f",yval));
+    painter.drawText(rectText, QString::asprintf("%.2f",yval));
 
 
 
@@ -676,7 +676,7 @@ void KLineGrid::drawTips2()
 
     QRect rectText( getWidgetWidth() - getMarginRight() + iTipsWidth/4,
                 yPos - iTipsHeight/4,iTipsWidth,iTipsHeight);
-    painter.drawText(rectText, str.sprintf("%.2f",yval));
+    painter.drawText(rectText, QString::asprintf("%.2f",yval));
 }
 
 

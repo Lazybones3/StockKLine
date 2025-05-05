@@ -28,7 +28,7 @@ void kVolumeGrid::paintEvent(QPaintEvent *event)
 void kVolumeGrid::initial()
 {
     //读取数据
-    QString file = tr("dataKLine.txt");
+    QString file = tr("../dataKLine.txt");
     if( !mDataFile.readData(file) )
     {
         QMessageBox::about(this,tr("数据文件读取失败"),tr("确定"));
@@ -83,7 +83,7 @@ void kVolumeGrid::drawYtick()
     QString str;
     for( int i=0;i<=getHGridNum();++i)
     {
-        str.sprintf("%d", (int)(i*ystep) );
+        QString::asprintf("%d", (int)(i*ystep) );
         painter.drawText( QPoint( getWidgetWidth() - getMarginLeft() + 10,
                                   getWidgetHeight() - getMarginBottom() - i*getAtomGridHeight()),
                           str);
