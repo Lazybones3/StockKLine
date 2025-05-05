@@ -169,11 +169,11 @@ void KLineGrid::drawYtick()
 
     if( 0 == getHGridNum() )
     {
-        QString::asprintf("%.2f",lowestBid);
+        str = QString::asprintf("%.2f",lowestBid);
         painter.drawText( QPoint( getWidgetWidth() - getMarginLeft() + 10,
                                   getWidgetHeight() - getMarginBottom() ),
                           str);
-        QString::asprintf("%.2f",highestBid);
+        str = QString::asprintf("%.2f",highestBid);
         painter.drawText( QPoint( getWidgetWidth() - getMarginLeft() + 10,
                                   getMarginTop() ),
                           str);
@@ -182,7 +182,7 @@ void KLineGrid::drawYtick()
 
     for( int i=0;i<=getHGridNum();++i)
     {
-        QString::asprintf("%.2f",lowestBid+ i*ystep);
+        str = QString::asprintf("%.2f",lowestBid+ i*ystep);
         painter.drawText( QPoint( getWidgetWidth() - getMarginLeft() + 10,
                                   getWidgetHeight() - getMarginBottom() - i*getAtomGridHeight()),
                           str);

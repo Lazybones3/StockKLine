@@ -83,7 +83,7 @@ void kVolumeGrid::drawYtick()
     QString str;
     for( int i=0;i<=getHGridNum();++i)
     {
-        QString::asprintf("%d", (int)(i*ystep) );
+        str = QString::asprintf("%d", (int)(i*ystep) );
         painter.drawText( QPoint( getWidgetWidth() - getMarginLeft() + 10,
                                   getWidgetHeight() - getMarginBottom() - i*getAtomGridHeight()),
                           str);
